@@ -22,7 +22,7 @@ const Hero = () => {
             Professional Commercial Cleaning Services
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90">
-            Trusted by businesses across the region for over a decade. We deliver pristine, safe, and healthy commercial environments.
+            Providing services for more than 15 years in the NOVA area. We deliver pristine, safe, and healthy commercial environments.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 

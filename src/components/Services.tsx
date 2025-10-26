@@ -12,9 +12,9 @@ const services = [
   {
     icon: Building2,
     title: "Office Cleaning",
-    description: "Comprehensive office cleaning services to maintain a pristine, productive work environment for your team.",
+    description: "Comprehensive office cleaning services to maintain a pristine, productive work environment. We provide the best and most cost-effective DATA CENTER specialized cleaning in the nation.",
     image: officeCleaningImg,
-    features: ["Daily/Weekly cleaning", "Floor care", "Restroom sanitization", "Breakroom maintenance"]
+    features: ["Daily/Weekly cleaning", "Floor care", "DATA CENTER cleaning", "Restroom sanitization"]
   },
   {
     icon: Clock,
@@ -33,9 +33,9 @@ const services = [
   {
     icon: Construction,
     title: "Post-Construction Cleaning",
-    description: "Complete final cleaning of commercial properties 5,000+ sq ft. From rough to final clean, we handle it all.",
+    description: "We have cleaned more than 10 million square feet of new constructions in the area, from high-end medical facilities to government facilities. Complete final cleaning from rough to final clean.",
     image: postConstructionImg,
-    features: ["Dust & debris removal", "Window cleaning", "Floor preparation", "Final inspection ready"]
+    features: ["10M+ sq ft cleaned", "Medical & government facilities", "Dust & debris removal", "Final inspection ready"]
   },
   {
     icon: Trash2,
@@ -47,9 +47,9 @@ const services = [
   {
     icon: Home,
     title: "Residential Cleaning",
-    description: "Professional home cleaning through our sister company MaidPerfect for residential properties.",
+    description: "It's not your traditional house cleaning. Customize your request - clean as few as one single restroom, just the family room if expecting guests, or the whole house including exterior. You pick and choose the areas to be cleaned.",
     image: residentialCleaningImg,
-    features: ["Detailed cleaning", "Trusted professionals", "Flexible scheduling", "Quality guaranteed"]
+    features: ["Fully customizable", "Single room or whole house", "Interior & exterior", "Sister company: MaidPerfect"]
   },
 ];
 

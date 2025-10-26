@@ -38,7 +38,7 @@ const About = () => {
         <div className="max-w-4xl mx-auto mb-16">
           <div className="prose prose-lg max-w-none">
             <p className="text-center text-lg text-foreground mb-8">
-              Since our founding over 15 years ago, Prime Pangea Contracting has been the go-to choice for 
+              For more than 15 years in the NOVA area, Prime Pangea Contracting has been the go-to choice for 
               businesses seeking professional, reliable commercial cleaning services. We specialize in properties 
               5,000 square feet and larger, bringing expertise and dedication to every project.
             </p>
