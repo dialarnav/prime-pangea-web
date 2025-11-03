@@ -1,6 +1,7 @@
 import { Building2, Clock, Shield, Construction, Trash2, Home } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import officeCleaningImg from "@/assets/office-cleaning.jpg";
 import dayPorterImg from "@/assets/day-porter.jpg";
 import covidDisinfectionImg from "@/assets/covid-disinfection.jpg";
@@ -14,42 +15,48 @@ const services = [
     title: "Office Cleaning",
     description: "Comprehensive office cleaning services to maintain a pristine, productive work environment. We provide the best and most cost-effective DATA CENTER specialized cleaning in the nation.",
     image: officeCleaningImg,
-    features: ["Daily/Weekly cleaning", "Floor care", "DATA CENTER cleaning", "Restroom sanitization"]
+    features: ["Daily/Weekly cleaning", "Floor care", "DATA CENTER cleaning", "Restroom sanitization"],
+    link: "/services/office-cleaning"
   },
   {
     icon: Clock,
     title: "Day Porter Service",
     description: "On-site cleaning professionals during business hours to maintain cleanliness and handle immediate needs.",
     image: dayPorterImg,
-    features: ["Daytime coverage", "Immediate response", "Continuous maintenance", "Professional appearance"]
+    features: ["Daytime coverage", "Immediate response", "Continuous maintenance", "Professional appearance"],
+    link: "/services/day-porter"
   },
   {
     icon: Shield,
     title: "COVID-19 Disinfection",
     description: "EPA-approved disinfection protocols to ensure a safe, sanitized environment for your employees and customers.",
     image: covidDisinfectionImg,
-    features: ["CDC compliant", "Hospital-grade products", "High-touch focus", "Safety certified"]
+    features: ["CDC compliant", "Hospital-grade products", "High-touch focus", "Safety certified"],
+    link: "/services/covid-disinfection"
   },
   {
     icon: Construction,
     title: "Post-Construction Cleaning",
     description: "We have cleaned more than 10 million square feet of new constructions in the area, from high-end medical facilities to government facilities. Complete final cleaning from rough to final clean.",
     image: postConstructionImg,
-    features: ["10M+ sq ft cleaned", "Medical & government facilities", "Dust & debris removal", "Final inspection ready"]
+    features: ["10M+ sq ft cleaned", "Medical & government facilities", "Dust & debris removal", "Final inspection ready"],
+    link: "/services/post-construction"
   },
   {
     icon: Trash2,
     title: "Junk Removal",
     description: "Efficient removal of unwanted items, furniture, and debris from your commercial property.",
     image: junkRemovalImg,
-    features: ["Fast service", "Proper disposal", "Heavy lifting", "Eco-friendly practices"]
+    features: ["Fast service", "Proper disposal", "Heavy lifting", "Eco-friendly practices"],
+    link: "/services/junk-removal"
   },
   {
     icon: Home,
     title: "Residential Cleaning",
     description: "It's not your traditional house cleaning. Customize your request - clean as few as one single restroom, just the family room if expecting guests, or the whole house including exterior. You pick and choose the areas to be cleaned.",
     image: residentialCleaningImg,
-    features: ["Fully customizable", "Single room or whole house", "Interior & exterior", "Sister company: MaidPerfect"]
+    features: ["Fully customizable", "Single room or whole house", "Interior & exterior", "Sister company: MaidPerfect"],
+    link: "/services/residential-cleaning"
   },
 ];
 
@@ -94,9 +101,11 @@ const Services = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="outline" className="w-full">
-                    Learn More
-                  </Button>
+                  <Link to={service.link}>
+                    <Button variant="outline" className="w-full">
+                      Learn More
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             );
