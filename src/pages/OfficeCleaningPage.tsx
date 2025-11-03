@@ -114,7 +114,7 @@ const OfficeCleaningPage = () => {
         {/* Quote Form */}
         <section className="py-16 bg-secondary">
           <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="text-3xl font-bold text-center mb-8">Get Your Free Quote</h2>
+            <h2 className="text-3xl font-bold text-center mb-8">Request Information</h2>
             <ContactForm />
           </div>
         </section>
