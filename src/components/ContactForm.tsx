@@ -32,7 +32,7 @@ const ContactForm = () => {
     }
 
     toast({
-      title: "Quote Request Sent!",
+      title: "Information Request Sent!",
       description: "We'll get back to you within 24 hours.",
     });
 
@@ -51,7 +51,7 @@ const ContactForm = () => {
     <section id="contact" className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Get a Free Quote</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Request Information Form</h2>
           <p className="text-lg text-muted-foreground">
             Let us know your cleaning needs and we'll provide a customized quote
           </p>
@@ -196,7 +196,7 @@ const ContactForm = () => {
             </div>
 
             <Button type="submit" size="lg" className="w-full">
-              Request Free Quote
+              Request Information
             </Button>
           </form>
         </div>
