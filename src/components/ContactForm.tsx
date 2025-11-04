@@ -7,6 +7,17 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { z } from "zod";
+
+// Contact form validation schema
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  phone: z.string().trim().min(1, "Phone is required").max(50, "Phone number is too long"),
+  service: z.string().min(1, "Please select a service"),
+  squareFootage: z.string().max(20, "Square footage value is too long").optional(),
+  message: z.string().max(2000, "Message must be less than 2000 characters").optional(),
+});
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -22,35 +33,36 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.phone || !formData.service) {
+    // Validate form data with Zod
+    const validation = contactSchema.safeParse(formData);
+    
+    if (!validation.success) {
+      const firstError = validation.error.errors[0];
       toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
+        title: "Validation Error",
+        description: firstError.message,
         variant: "destructive",
       });
       return;
     }
 
-    // Save to database
+    // Save validated data to database (map field names to database columns)
     const { error } = await supabase
       .from('contact_submissions')
-      .insert([
-        {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          service: formData.service,
-          square_footage: formData.squareFootage,
-          message: formData.message,
-        }
-      ]);
+      .insert([{
+        name: validation.data.name,
+        email: validation.data.email,
+        phone: validation.data.phone,
+        service: validation.data.service,
+        square_footage: validation.data.squareFootage,
+        message: validation.data.message,
+      }]);
 
     if (error) {
-      console.error('Error saving submission:', error);
+      // Generic error message without exposing internal details
       toast({
-        title: "Error",
-        description: "There was a problem submitting your request. Please try again.",
+        title: "Submission Failed",
+        description: "We couldn't process your request. Please try again or contact us directly.",
         variant: "destructive",
       });
       return;
