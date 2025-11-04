@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -18,7 +19,7 @@ const ContactForm = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -26,6 +27,30 @@ const ContactForm = () => {
       toast({
         title: "Missing Information",
         description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Save to database
+    const { error } = await supabase
+      .from('contact_submissions')
+      .insert([
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          square_footage: formData.squareFootage,
+          message: formData.message,
+        }
+      ]);
+
+    if (error) {
+      console.error('Error saving submission:', error);
+      toast({
+        title: "Error",
+        description: "There was a problem submitting your request. Please try again.",
         variant: "destructive",
       });
       return;
