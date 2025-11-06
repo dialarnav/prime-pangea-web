@@ -46,7 +46,9 @@ const Navigation = () => {
                 {link.name}
               </a>
             ))}
-            <Button size="lg">Get a Quote</Button>
+            <Button size="lg" asChild>
+              <a href="/#services">Get a Quote</a>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -74,8 +76,8 @@ const Navigation = () => {
                 {link.name}
               </a>
             ))}
-            <Button size="lg" className="w-full">
-              Get a Quote
+            <Button size="lg" className="w-full" asChild>
+              <a href="/#services" onClick={() => setIsOpen(false)}>Get a Quote</a>
             </Button>
           </div>
         )}
