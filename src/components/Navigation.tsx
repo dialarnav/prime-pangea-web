@@ -47,7 +47,7 @@ const Navigation = () => {
               </a>
             ))}
             <Button size="lg" asChild>
-              <a href="/#services">Get a Quote</a>
+              <a href="/#contact">Get a Quote</a>
             </Button>
           </div>
 
@@ -77,7 +77,7 @@ const Navigation = () => {
               </a>
             ))}
             <Button size="lg" className="w-full" asChild>
-              <a href="/#services" onClick={() => setIsOpen(false)}>Get a Quote</a>
+              <a href="/#contact" onClick={() => setIsOpen(false)}>Get a Quote</a>
             </Button>
           </div>
         )}

@@ -29,9 +29,12 @@ const Hero = () => {
               size="lg" 
               variant="secondary"
               className="text-lg px-8 py-6"
+              asChild
             >
-              Get Free Quote
-              <ArrowRight className="ml-2" />
+              <a href="#contact">
+                Get Free Quote
+                <ArrowRight className="ml-2" />
+              </a>
             </Button>
             <Button 
               size="lg" 
