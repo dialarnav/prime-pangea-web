@@ -1,42 +1,54 @@
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import officeCleaningImg from "@/assets/office-cleaning.jpg";
-import dayPorterImg from "@/assets/day-porter.jpg";
-import covidDisinfectionImg from "@/assets/covid-disinfection.jpg";
-import postConstructionImg from "@/assets/post-construction.jpg";
-import junkRemovalImg from "@/assets/junk-removal.jpg";
-import residentialCleaningImg from "@/assets/residential-cleaning.jpg";
+import officeCleaning1 from "@/assets/office-cleaning-1.jpg";
+import officeCleaning2 from "@/assets/office-cleaning-2.jpg";
+import officeCleaning3 from "@/assets/office-cleaning-3.jpg";
+import dayPorter1 from "@/assets/day-porter-1.jpg";
+import dayPorter2 from "@/assets/day-porter-2.jpg";
+import dayPorter3 from "@/assets/day-porter-3.jpg";
+import covidDisinfection1 from "@/assets/covid-disinfection-1.jpg";
+import covidDisinfection2 from "@/assets/covid-disinfection-2.jpg";
+import covidDisinfection3 from "@/assets/covid-disinfection-3.jpg";
+import postConstruction1 from "@/assets/post-construction-1.jpg";
+import postConstruction2 from "@/assets/post-construction-2.jpg";
+import postConstruction3 from "@/assets/post-construction-3.jpg";
+import junkRemoval1 from "@/assets/junk-removal-1.jpg";
+import junkRemoval2 from "@/assets/junk-removal-2.jpg";
+import junkRemoval3 from "@/assets/junk-removal-3.jpg";
+import residentialCleaning1 from "@/assets/residential-cleaning-1.jpg";
+import residentialCleaning2 from "@/assets/residential-cleaning-2.jpg";
+import residentialCleaning3 from "@/assets/residential-cleaning-3.jpg";
 
 const galleryData = {
   office: [
-    { src: officeCleaningImg, title: "Office Space Cleaning", description: "Complete office sanitization" },
-    { src: officeCleaningImg, title: "Corporate Offices", description: "Professional workspace maintenance" },
-    { src: officeCleaningImg, title: "Meeting Rooms", description: "Pristine meeting environments" },
+    { src: officeCleaning1, title: "Office Space Cleaning", description: "Complete office sanitization" },
+    { src: officeCleaning2, title: "Corporate Offices", description: "Professional workspace maintenance" },
+    { src: officeCleaning3, title: "Meeting Rooms", description: "Pristine meeting environments" },
   ],
   porter: [
-    { src: dayPorterImg, title: "Day Porter Service", description: "On-site professional service" },
-    { src: dayPorterImg, title: "Lobby Maintenance", description: "Continuous care during business hours" },
-    { src: dayPorterImg, title: "Building Support", description: "Immediate response cleaning" },
+    { src: dayPorter1, title: "Day Porter Service", description: "On-site professional service" },
+    { src: dayPorter2, title: "Lobby Maintenance", description: "Continuous care during business hours" },
+    { src: dayPorter3, title: "Building Support", description: "Immediate response cleaning" },
   ],
   covid: [
-    { src: covidDisinfectionImg, title: "COVID-19 Disinfection", description: "Hospital-grade sanitization" },
-    { src: covidDisinfectionImg, title: "High-Touch Disinfection", description: "CDC-compliant protocols" },
-    { src: covidDisinfectionImg, title: "Safe Environments", description: "Comprehensive sanitization" },
+    { src: covidDisinfection1, title: "COVID-19 Disinfection", description: "Hospital-grade sanitization" },
+    { src: covidDisinfection2, title: "High-Touch Disinfection", description: "CDC-compliant protocols" },
+    { src: covidDisinfection3, title: "Safe Environments", description: "Comprehensive sanitization" },
   ],
   construction: [
-    { src: postConstructionImg, title: "Post-Construction Clean", description: "Final clean before occupancy" },
-    { src: postConstructionImg, title: "New Building Prep", description: "Construction debris removal" },
-    { src: postConstructionImg, title: "Final Touch", description: "Move-in ready spaces" },
+    { src: postConstruction1, title: "Post-Construction Clean", description: "Final clean before occupancy" },
+    { src: postConstruction2, title: "New Building Prep", description: "Construction debris removal" },
+    { src: postConstruction3, title: "Final Touch", description: "Move-in ready spaces" },
   ],
   junk: [
-    { src: junkRemovalImg, title: "Junk Removal", description: "Efficient debris removal" },
-    { src: junkRemovalImg, title: "Property Clearing", description: "Complete cleanout services" },
-    { src: junkRemovalImg, title: "Disposal Service", description: "Eco-friendly waste management" },
+    { src: junkRemoval1, title: "Junk Removal", description: "Efficient debris removal" },
+    { src: junkRemoval2, title: "Property Clearing", description: "Complete cleanout services" },
+    { src: junkRemoval3, title: "Disposal Service", description: "Eco-friendly waste management" },
   ],
   residential: [
-    { src: residentialCleaningImg, title: "Home Cleaning", description: "MaidPerfect residential service" },
-    { src: residentialCleaningImg, title: "Deep Cleaning", description: "Thorough home sanitization" },
-    { src: residentialCleaningImg, title: "Regular Maintenance", description: "Consistent quality care" },
+    { src: residentialCleaning1, title: "Home Cleaning", description: "MaidPerfect residential service" },
+    { src: residentialCleaning2, title: "Deep Cleaning", description: "Thorough home sanitization" },
+    { src: residentialCleaning3, title: "Regular Maintenance", description: "Consistent quality care" },
   ],
 };
 
